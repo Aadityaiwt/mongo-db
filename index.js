@@ -17,14 +17,42 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-User.insertMany([
-    {name: "SK", email: "sk@gmail.com", age: 22},
-    {name: "AK", email: "ak@gmail.com", age: 23},
-    {name: "AP", email: "ap@gmail.com", age: 21},
-]).then((res) => {
+User.findByIdAndDelete('69bc21bb478eb2735d2c0271').then((res) => {
     console.log(res);
     
+}).catch((err) => {
+    console.log(err);
+    
 })
+
+// User.findByIdAndUpdate({_id: '69bc1e82b981a50f353aff9f'}, {age: 30}, {new: true})
+// .then((res) => {
+//     console.log(res);
+    
+// })
+// .catch((err) => {
+//     console.log(err);
+    
+// })
+
+
+// User.findById("69bc21bb478eb2735d2c0271")
+// .then((res) => {
+//     console.log(res);
+    
+// })
+// .catch((err) => {
+//     console.log(err);
+    
+// })
+
+// User.insertMany([
+//     {name: "SK", email: "sk@gmail.com", age: 22},
+//     {name: "AK", email: "ak@gmail.com", age: 23},
+//     {name: "AP", email: "ap@gmail.com", age: 21},
+// ]).then((res) => {
+//     console.log(res);
+// })
 
 // const user2 = new User({
 //     name: "Aditya",
@@ -40,4 +68,6 @@ User.insertMany([
 //     console.log(err);
     
 // })
+
+
 
